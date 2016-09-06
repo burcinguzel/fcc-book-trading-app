@@ -1,0 +1,35 @@
+<div style="width:400px; margin: auto;">
+ <div class="alert" style="background-color: #d41; display:none;z-index:1;" id="searchAlert" >
+  	<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  		Please enter a book name
+</div> 
+    <div class="w3-container w3-blue-grey w3-card-8 w3-padding-64 w3-margin-bottom" >
+            <form  method="post" action="/add" id="addForm">
+                <label class="w3-label" style="color:white;" >Book Name</label>
+                <% if(typeof bookName == "undefined"){ %>
+                    <input class="w3-input" type="text" name="bookName" id="bookName" >
+                <label class="w3-label" style="color:white;" >Author</label>
+                    <input class="w3-input" type="text" name="author" id="author" >
+                <% }else{ %>
+                    <input class="w3-input" type="text" name="bookName" id="bookName" value="<%= bookName %>">
+                <label class="w3-label" style="color:white;" >Author</label>    
+                    <input class="w3-input" type="text" name="author" id="author" value="<%= author %>" >
+                <% } %>
+           </form>
+           <button class="w3-btn w3-diplay-center w3-blue-grey w3-border w3-border-blue w3-margin-top" id="btnAdd">Search</button>
+                 <img src="loadIcon2.png" alt="loading" class="w3-spin" id="loading" >
+    </div>
+<div id="chooseImg" style="display:none;" >
+    <h3>Cover Suggestion:</h3>
+    <form class="w3-card-4  w3-blue-grey " style="width:70%;margin:auto;text-align:center;" method="post" action="addbook" id="addBookForm" >
+      <img alt="Person" style="height: 250px;" id="images" >
+      <input style="display:none;" name="url"  id="urlInput" >
+      <input style="display:none;"  name="book_author" id="book_author">
+      </form>
+      <div class="w3-container" style="display:none;text-align:center;" id="chooseImgBtns">
+        <p><button class="w3-btn w3-blue-grey bookClass" id="books" >Choose</button>
+        <span><button id="next" class="w3-btn w3-blue-grey">Next One</button></span>
+        </p>
+      </div>
+</div>
+</div>

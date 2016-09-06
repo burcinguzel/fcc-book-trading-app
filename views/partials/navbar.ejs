@@ -1,0 +1,19 @@
+ <ul class="w3-navbar w3-card-8 w3-blue-grey w3-margin-bottom">
+          <li><a href="/">Book Trading</a></li>
+          <li><a href="/allbooks">Books</a></li>
+          <% if(!login) { %>
+          <li class="w3-right" ><a href="/login">Login</a></li>
+          <% } else {%>
+          <li class="w3-right" >
+           <div class="w3-dropdown-hover">
+                   <button class="w3-btn w3-blue-grey"><%= username %></button>
+                   <div class="w3-dropdown-content w3-border w3-teal">
+                        <a class="w3-hover-green" href="/mybooks">My Books</a>
+                        <a class="w3-hover-green" href="/myprofile">My Profile</a>
+                        <a class="w3-hover-green" href="/outrequests">My Trade Requests</a>
+                        <a class="w3-hover-green" href="/inrequests"> Trade Offers</a>
+                        <a class="w3-hover-red" href="/logout">Logout</a>
+                   </div>
+           </div>
+          <% } %>
+ </ul>

@@ -1,0 +1,32 @@
+ <div class="w3-container w3-blue-grey w3-margin-bottom" style="text-align:center;">
+  <h2>Incoming Offers: </h2>
+</div> 
+
+<% if(typeof tradeOffers != "undefined"){ %>
+<div class="w3-row-padding" style="font-size: 8px;">
+    <% for(var j =0 ;j<tradeOffers.length; j++){ %>
+    <% for(var i =0 ;i<tradeOffers[j].length;i++){ %>
+    <a href="/book/<%= tradeOffers[j][i].bookId %>" class="w3-col m3"  style="margin-bottom:16px;text-decoration:none;">   
+        <div class="w3-card-4  w3-blue-grey " style="width:70%;margin:auto;text-align:center;"  >
+            <p>With : <%= tradeOffers[j][i].myBookName %></p>
+          <img src="<%= tradeOffers[j][i].url %>" alt="Person" style="height: 200px;" id="images" >
+          <div style="height:100px;">
+              <p>Book Name: <%= tradeOffers[j][i].bookname %></p>
+              <p>Owner: <%= tradeOffers[j][i].owner %></p>
+              
+                <form method="post" action="tradeBook" id="tradeForm" style="text-align:center;">
+                  <input style="display:none;" name="offeringBookId" value="<%= tradeOffers[j][i].bookId %>" id="urlInput" >
+                  <input style="display:none;"  name="myBookId" value="<%= tradeOffers[j][i].myBookId %>" id="book_author">
+                  <p><input class="w3-btn w3-green" id="btnAccept" name="accept" value="Accept" type="submit">
+                     <input id="next" class="w3-btn w3-red" id="btnReject" name="reject" value="Reject" type="submit" ></span>
+                    </p>
+                  </form>
+
+
+          </div>
+        </div>
+    </a>
+    <% } %>
+    <% } %>
+</div>
+<% } %>

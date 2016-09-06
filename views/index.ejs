@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Book Trading App</title>
+        <link rel="stylesheet" href="/w3.css">
+        <link rel="stylesheet" href="/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"  type="text/javascript" ></script>
+        <script src="/jscrpt.js"  type="text/javascript" ></script>
+    </head>
+    <body style="height:100%;">
+        <div class="w3-container" style="margin:0% 10% 0%;min-height:100%;">
+            <%- include('partials/navbar') %>
+            <% if(page == 0){ %>
+                <%- include('partials/main') %>
+            <% }else if(page == 1){ %>
+                <%- include('partials/allbooks') %>
+            <% }else if(page == 2) { %>
+                <%- include('partials/login') %>
+            <% }else if(page == 3) { %>
+                <%- include('partials/register') %>
+            <% }else if(page == 4) { %>
+                <%- include('partials/user') %>
+            <% }else if(page == 5) { %>
+                <%- include('partials/mybook') %>
+            <% }else if(page == 6) { %>
+                <%- include('partials/book') %>
+            <% }else if(page == 7) { %>
+                <%- include('partials/add') %>
+            <% }else if(page == 8) { %>
+                <%- include('partials/myprofile') %>
+            <% }else if(page == 9) { %>
+                <%- include('partials/outrequest') %>
+            <% }else if(page == 10) { %>
+                <%- include('partials/inrequest') %>
+            <% } %>
+                    
+           
+        </div>
+ <div class="w3-blue-grey" style=" position: relative;bottom:0px; text-align:center;width:100%;">
+                  <p>&copy; This app is built by <a href="https://github.com/burcinguzel">Purch</a></p>
+                  <p>It is the 4th dynamic web application project of <a href="https://www.freecodecamp.com">FreeCodeCamp</a></p>
+                  <p>For CSS Library, See <a href="http://www.w3schools.com/w3css/default.asp">W3.CSS</a></p>
+            </div>
+    </body>
+</html>

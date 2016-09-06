@@ -1,0 +1,32 @@
+ .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    position:fixed;
+    top:0;
+    z-index: 1;
+    margin: 2% auto;
+    width:400px;   
+            }
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+        }
+.closebtn:hover {
+    color: black;
+        }
+        
+#loading{
+    background-image: url("loadIcon");
+    width:90px;
+    height:90px;
+    z-index:1;
+    margin:auto;
+    display:none;
+}

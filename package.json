@@ -1,0 +1,17 @@
+{
+  "name": "fcc-book-trade-app",
+  "version": "1.0.0",
+  "description": "It's 4th FCC dynamic web app project",
+  "main": "index.ejs",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "author": "Purch",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.1",
+    "express": "^3.2.6",
+    "mongodb": "^2.2.9"
+  }
+}

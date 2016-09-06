@@ -1,0 +1,30 @@
+<div style="width:400px; margin: auto;">
+ <div class="alert" style="background-color: #d41; display:none;z-index:10;" id="loguNameAlert" >
+  	<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  		User name  can not be empty!!!
+</div>
+ <div class="alert" style="background-color: #d41; display:none;z-index:10;" id="logPassAlert" >
+  	<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  		Password  can not be empty!!!
+</div>
+  <% if(typeof alert != 'undefined'){ %>
+   <% if( alert == 2) { %>
+			<div class="alert" style="background-color: #d41;display:block;" >
+  				<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  					Username or password is wrong!!!
+			</div>
+          <% } %>
+          <% } %>
+
+<div class="w3-container w3-blue-grey w3-card-8 w3-padding-64">
+<form  action="/login" method="post" id="logForm">
+<label class="w3-label" style="color:white;" >User Name</label>
+<input class="w3-input" type="text" name="uName" id="logUName">
+
+<label class="w3-label" style="color:white;" >Password</label>
+<input class="w3-input" type="password" name="pass" id="logPass">
+</form>
+<button class="w3-btn w3-diplay-center w3-blue-grey w3-border w3-border-blue w3-margin-top" id="btnLog">Login</button>
+<div class="w3-margin">Don't have an account? <a href="/register">Sign up</a></div>
+</div>
+</div>

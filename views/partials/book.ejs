@@ -1,0 +1,42 @@
+<div class="w3-container  w3-blue-grey w3-card-8 w3-padding-64" style="width:400px; margin: auto;">
+    <% if(typeof book !="undefined"){ %>
+    <div style="text-align:center" ><img src="<%= book.url %>"></div>
+    <p><span style="color:#ff8566;" >Name: </span><%= book.bookname %></p>
+    <p><span style="color:#ff8566;" >Author:</span><%= book.author %> </p>
+    <p><span style="color:#ff8566;" >Owner: </span><%= book.owner %></p>
+    <% if(!book.tradeFlag){ %>
+    <p><span style="color:#85ff66;" >Open for trade</span></p>
+        <% if(login){ %>
+            <% if(username != book.owner){ %>
+            <div class="w3-accordion ">
+                  <button onclick="myFunction('userbooksId')" class="w3-btn w3-green w3-margin-bottom">
+                    <span style="color:#85ff66;" ><b>Trade</b></span>
+                  </button>
+                  <div id="userbooksId" class="w3-accordion-content w3-container">
+                  <% if(userbooks.length == 0){ %>    
+                    <p><span style="color:##ff471a;" ><b>No books for trading</b></span></p>
+                  <% }else{ %>
+                    <div class="w3-row" style="text-align:center;">
+                      <% for(var i in userbooks) { %>
+                    <div class="w3-col m12 w3-margin-bottom" >
+                        <form action="/book/<%= userbooks[i]._id%>" method="post">
+                        <input style="display:none;" name="tradingBook" value="<%= book.bookname %>">
+                        <input style="display:none;" name="reqBookName" value="<%= userbooks[i].bookname %>">
+                        <input style="display:none;" name="reqBookAuthor" value="<%= userbooks[i].author %>">
+                        <input style="display:none;" name="reqBookUrl" value="<%= userbooks[i].url %>">
+                        <button class="w3-btn w3-red"  ><%= userbooks[i].bookname %></button>
+                        </form>
+                    </div>
+                    <% } %>
+                     </div>
+                    <% } %>
+                   
+                  </div>
+            </div>
+            <% } %>
+        <% } %>
+    <% }else{ %>
+    <p><span style="color:#ff471a;" >Traded</span></p>
+    <% } %>
+    <% } %>
+</div>

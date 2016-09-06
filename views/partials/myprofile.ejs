@@ -1,0 +1,19 @@
+<div style="width:400px; margin: auto;">
+    <div class="w3-container w3-blue-grey w3-card-8 w3-padding-64" >
+        <form  method="post" action="/myprofile" id="upForm">
+            <label class="w3-label" style="color:white;" >First Name</label>
+                <input class="w3-input" type="text" name="fName" id="fName" value="<%= info.firstname %>">
+            <label class="w3-label" style="color:white;" >Last Name</label>
+                <input class="w3-input" type="text" name="lName" id="lName"value="<%= info.lastname %>">
+            <label class="w3-label" style="color:white;" >E-Mail</label>
+                <input class="w3-input" type="text" name="mail" id="mail" value="<%= info.mail %>">
+            <label class="w3-label" style="color:white;" >City</label>
+                <input class="w3-input" type="text" name="city" id="city" value="<%= info.city %>">
+            <label class="w3-label" style="color:white;" >State</label>
+                <input class="w3-input" type="text" name="state" id="state" value="<%= info.state %>">
+            <label class="w3-label" style="color:white;" >Country</label>
+                <input class="w3-input" type="text" name="country" id="country" value="<%= info.country %>">
+       </form>
+       <button class="w3-btn w3-diplay-center w3-blue-grey w3-border w3-border-blue w3-margin-top" id="btnUp">Update</button>
+    </div>
+</div>

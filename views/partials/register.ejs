@@ -1,0 +1,38 @@
+<div style="width:400px; margin: auto;">
+ <div class="alert" style="background-color: #d41; display:none;z-index:10;" id="passAlert" >
+  	<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  		Passwords do not match!!!
+</div>
+ <div class="alert" style="background-color: #d41; display:none;z-index:10;" id="uNameAlert" >
+  	<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  		User name can not be empty!!!
+</div>
+ <div class="alert" style="background-color: #d41; display:none;z-index:10;" id="pass1Alert" >
+  	<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  		Password  can not be empty!!!
+</div>
+ <div class="alert" style="background-color: #d41; display:none;z-index:10;" id="pass2Alert" >
+  	<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  		Password  can not be empty!!!
+</div>
+  <% if(typeof alert != 'undefined'){ %>
+   <% if( alert == 1) { %>
+			<div class="alert" style="background-color: #d41;display:block;" >
+  				<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  					Username has already been choosen!!
+			</div>
+          <% } %>
+          <% } %>
+
+    <div class="w3-container w3-blue-grey w3-card-8 w3-padding-64" >
+        <form  method="post" action="/register" id="regForm">
+            <label class="w3-label" style="color:white;" >User Name</label>
+                <input class="w3-input" type="text" name="uName" id="uName">
+            <label class="w3-label" style="color:white;" >Password</label>
+                <input class="w3-input" type="password" name="pass1" id="pass1">
+            <label class="w3-label" style="color:white;" >Re-type Password</label>
+                <input class="w3-input" type="password" name="pass2" id="pass2">
+       </form>
+       <button class="w3-btn w3-diplay-center w3-blue-grey w3-border w3-border-blue w3-margin-top" id="btnReg">Register</button>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="w3-container w3-blue-grey w3-margin-bottom" style="text-align:center;">
+  <h2>My Requests: </h2>
+</div> 
+
+<% if(typeof tradeRequests != "undefined"){ %>
+<div class="w3-row-padding" style="font-size: 8px;">
+    <% for(var j =0 ;j<tradeRequests.length; j++){ %>
+    <% for(var i =0 ;i<tradeRequests[j].length;i++){ %>
+    <div class="w3-col m3"  style="margin-bottom:16px;text-decoration:none;">   
+        <div class="w3-card-4  w3-blue-grey " style="width:70%;margin:auto;text-align:center;"  >
+            <p>With : <%= tradeRequests[j][i].bookname %></p>
+          <img src="<%= tradeRequests[j][i].wantedBookUrl %>" alt="Person" style="height: 200px;" id="images" >
+          <div style="height:100px;">
+              <p>Book Name: <%= tradeRequests[j][i].wantedBookName %></p>
+              <p>Owner: <%= tradeRequests[j][i].wantedBookOwner %></p>
+          </div>
+        </div>
+    </div>
+    <% } %>
+    <% } %>
+</div>
+<% } %>

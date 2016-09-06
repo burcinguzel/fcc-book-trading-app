@@ -1,0 +1,26 @@
+<div style="width:400px; margin: auto;">
+    <div class="w3-card-4 w3-blue-grey w3-margin" style="text-align:center;">
+        <a href="/add" class="w3-btn w3-green w3-border w3-border-light-green  w3-margin" >Add a New</a>
+    </div>
+</div>
+
+
+ <div class="w3-container w3-blue-grey w3-margin-bottom" style="text-align:center;">
+  <h2>My Books: </h2>
+</div> 
+
+<% if(typeof books != "undefined"){ %>
+<div class="w3-row-padding" style="font-size: 9px;">
+    <% for(var i =0 ;i<books.length;i++){ %>
+    <a href="/book/<%= books[i]._id %>" class="w3-col m3" style="margin-bottom:16px;text-decoration:none;">   
+        <div class="w3-card-4  w3-blue-grey " style="width:70%;margin:auto;text-align:center;"  >
+          <img src="<%= books[i].url %>" alt="Person" style="height: 200px;" id="images" >
+          <div style="height:64px;">
+              <p><span style="color:#ff8566;" >Book Name:</span> <%= books[i].bookname %></p>
+              <p><span style="color:#ff8566;" >Author:</span> <%= books[i].author %></p>
+          </div>
+        </div>
+    </a>
+    <% } %>
+</div>
+<% } %>
