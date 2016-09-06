@@ -451,7 +451,7 @@ function retrieveMyRequests(req,res){
         }
         var myCol = db.collection('book');
         myCol.find(
-             { tradeOffers: { "$elemMatch": { "owner":{  "$eq": req.session.username.toString()}, "tradeFlag":{  "$eq": false} }} }
+             { tradeOffers: { "$elemMatch": { "owner":{  "$eq": req.session.username.toString()}}}, tradeFlag:{  "$eq": false}  }
             
             ).toArray(function(e,d){
                 if(d.length){
